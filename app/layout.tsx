@@ -19,33 +19,33 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Twist - The Dessert Shop | Premium Desserts in Faisalabad',
-    template: '%s | Twist - The Dessert Shop'
+    default: 'Zhadae\'s | Artisanal Cheesecakes in Logan, Australia',
+    template: '%s | Zhadae\'s'
   },
-  description: 'Experience the finest handcrafted desserts at Twist - The Dessert Shop in Faisalabad, Pakistan. Indulge in our signature cakes, pastries, gelato, and more.',
-  keywords: ['dessert shop', 'cakes', 'pastries', 'gelato', 'Faisalabad', 'Pakistan', 'sweet shop', 'bakery', 'cafe'],
-  authors: [{ name: 'Twist - The Dessert Shop' }],
-  creator: 'Twist - The Dessert Shop',
+  description: 'Discover creamy, indulgent artisanal cheesecakes at Zhadae\'s in Logan, Australia. Available in 6 delicious flavors - Lotus, Banofee, Oreo, Peanut Butter, Strawberry & White Chocolate Raspberry.',
+  keywords: ['cheesecake', 'artisanal cheesecake', 'dessert shop', 'Logan', 'Australia', 'sweet treats', 'lotus cheesecake', 'banofee', 'oreo cheesecake'],
+  authors: [{ name: 'Zhadae\'s' }],
+  creator: 'Zhadae\'s',
   openGraph: {
     type: 'website',
-    locale: 'en_PK',
-    url: 'https://twistdesserts.pk',
-    siteName: 'Twist - The Dessert Shop',
-    title: 'Twist - The Dessert Shop | Premium Desserts in Faisalabad',
-    description: 'Experience the finest handcrafted desserts at Twist - The Dessert Shop in Faisalabad, Pakistan.',
+    locale: 'en_AU',
+    url: 'https://zhadaes.com.au',
+    siteName: 'Zhadae\'s',
+    title: 'Zhadae\'s | Artisanal Cheesecakes in Logan, Australia',
+    description: 'Discover creamy, indulgent artisanal cheesecakes at Zhadae\'s in Logan, Australia.',
     images: [
       {
         url: '/images/hero-dessert.jpg',
         width: 1200,
         height: 630,
-        alt: 'Twist - The Dessert Shop',
+        alt: 'Zhadae\'s - Artisanal Cheesecakes',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Twist - The Dessert Shop | Premium Desserts in Faisalabad',
-    description: 'Experience the finest handcrafted desserts at Twist - The Dessert Shop in Faisalabad, Pakistan.',
+    title: 'Zhadae\'s | Artisanal Cheesecakes in Logan, Australia',
+    description: 'Discover creamy, indulgent artisanal cheesecakes at Zhadae\'s in Logan, Australia.',
     images: ['/images/hero-dessert.jpg'],
   },
   robots: {

@@ -4,30 +4,43 @@ import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
 
-const featuredDesserts = [
+const featuredCheesecakes = [
   {
-    name: "Signature Chocolate Cake",
-    description: "Rich Belgian chocolate layers with silky ganache",
-    image: "/images/dessert-1.jpg",
-    price: "Rs. 850",
+    name: "Lotus Cheesecake",
+    description: "Creamy cheesecake with signature lotus biscoff spread",
+    image: "/zhadae's/lotus-cheeesecake.jpeg",
+    price: "$14.00",
+    popular: true,
   },
   {
-    name: "Artisan Gelato",
-    description: "Premium Italian gelato in unique flavors",
-    image: "/images/dessert-2.jpg",
-    price: "Rs. 450",
+    name: "Banana Coffee (Banofee)",
+    description: "Classic banana and toffee combo with coffee notes",
+    image: "/zhadae's/banofee.jpeg",
+    price: "$12.00",
   },
   {
-    name: "French Macarons",
-    description: "Delicate almond meringue with luxurious fillings",
-    image: "/images/dessert-3.jpg",
-    price: "Rs. 350",
+    name: "Oreo",
+    description: "Cookies and cream cheesecake with crushed oreos",
+    image: "/zhadae's/oreo.jpeg",
+    price: "$12.00",
   },
   {
-    name: "New York Cheesecake",
-    description: "Creamy classic with seasonal berry topping",
-    image: "/images/dessert-4.jpg",
-    price: "Rs. 650",
+    name: "Peanut Butter",
+    description: "Rich peanut butter cheesecake with chocolate drizzle",
+    image: "/zhadae's/peanut-butter.jpeg",
+    price: "$15.50",
+  },
+  {
+    name: "Strawberry",
+    description: "Fresh strawberry cheesecake with fruit swirls",
+    image: "/zhadae's/strawberry.jpeg",
+    price: "$14.00",
+  },
+  {
+    name: "White Chocolate Raspberry",
+    description: "Decadent white chocolate with tart raspberry swirl",
+    image: "/zhadae's/white-choco-raspberry.jpeg",
+    price: "$15.50",
   },
 ]
 
@@ -63,7 +76,7 @@ export function FeaturedDesserts() {
         >
           <p className="text-sm uppercase tracking-[0.2em] text-primary mb-3">Our Specialties</p>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-balance">
-            Featured Desserts
+            Our Cheesecakes
           </h2>
         </motion.div>
 
@@ -72,9 +85,9 @@ export function FeaturedDesserts() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
         >
-          {featuredDesserts.map((dessert, index) => (
+          {featuredCheesecakes.map((cheesecake, index) => (
             <motion.div
               key={index}
               variants={item}
@@ -82,37 +95,44 @@ export function FeaturedDesserts() {
               transition={{ duration: 0.3 }}
               className="group cursor-pointer"
             >
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden mb-4">
-                <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="w-full h-full"
-                >
-                  <Image
-                    src={dessert.image}
-                    alt={dessert.name}
-                    fill
-                    className="object-cover"
+              <Link href="/menu" className="block">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-4">
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    className="w-full h-full"
+                  >
+                    <Image
+                      src={cheesecake.image}
+                      alt={cheesecake.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                    className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"
                   />
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
-                  className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"
-                />
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileHover={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute bottom-4 left-4 right-4 text-white"
-                >
-                  <span className="text-lg font-semibold">{dessert.price}</span>
-                </motion.div>
-              </div>
-              <h3 className="font-serif text-lg font-semibold mb-1 group-hover:text-primary transition-colors">
-                {dessert.name}
-              </h3>
-              <p className="text-sm text-muted-foreground">{dessert.description}</p>
+                  {cheesecake.popular && (
+                    <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-medium">
+                      Popular
+                    </div>
+                  )}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileHover={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute bottom-4 left-4 right-4 text-white"
+                  >
+                    <span className="text-lg font-semibold">{cheesecake.price}</span>
+                  </motion.div>
+                </div>
+                <h3 className="font-serif text-lg font-semibold mb-1 group-hover:text-primary transition-colors">
+                  {cheesecake.name}
+                </h3>
+                <p className="text-sm text-muted-foreground">{cheesecake.description}</p>
+              </Link>
             </motion.div>
           ))}
         </motion.div>
@@ -128,7 +148,7 @@ export function FeaturedDesserts() {
             href="/menu"
             className="inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all"
           >
-            View Full Menu
+            View All Flavors
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>

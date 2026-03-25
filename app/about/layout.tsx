@@ -2,10 +2,10 @@ import { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "Discover the story behind Twist - The Dessert Shop. Learn about our passion for crafting exquisite desserts and our commitment to bringing sweetness to Faisalabad.",
+  description: "Discover the story behind Zhadae's. Learn about our passion for crafting artisanal cheesecakes in Logan, Australia.",
   openGraph: {
-    title: "About Us | Twist - The Dessert Shop",
-    description: "Discover the story behind Twist - The Dessert Shop. Learn about our passion for crafting exquisite desserts.",
+    title: "About Us | Zhadae's",
+    description: "Discover the story behind Zhadae's artisanal cheesecakes.",
   },
 }
 

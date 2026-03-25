@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Gallery",
-  description: "Explore our visual gallery showcasing handcrafted desserts, French pastries, artisan gelato, and the elegant ambiance at Twist - The Dessert Shop in Faisalabad.",
+  description: "Explore our visual gallery showcasing artisanal cheesecakes and sweet creations at Zhadae's in Logan, Australia.",
 }
 
 export default function GalleryLayout({

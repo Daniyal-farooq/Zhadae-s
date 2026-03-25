@@ -2,10 +2,10 @@ import { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: "Get in touch with Twist - The Dessert Shop. Visit us at Susan Road, Kohinoor City, Faisalabad or order via WhatsApp. We're here to make your dessert dreams come true.",
+  description: "Get in touch with Zhadae's for artisanal cheesecake orders in Logan, Australia. Connect with us on Instagram or Threads.",
   openGraph: {
-    title: "Contact Us | Twist - The Dessert Shop",
-    description: "Get in touch with Twist - The Dessert Shop. Visit us at Susan Road, Kohinoor City, Faisalabad or order via WhatsApp.",
+    title: "Contact Us | Zhadae's",
+    description: "Order artisanal cheesecakes from Zhadae's in Logan, Australia.",
   },
 }
 

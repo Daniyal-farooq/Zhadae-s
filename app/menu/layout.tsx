@@ -2,10 +2,10 @@ import { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Our Menu",
-  description: "Explore our delicious selection of handcrafted desserts at Twist - The Dessert Shop. From signature cakes to artisan gelato, discover your next sweet indulgence.",
+  description: "Explore our artisanal cheesecake menu at Zhadae's. Choose from 6 delicious flavors including Lotus, Banofee, Oreo, Peanut Butter, Strawberry, and White Chocolate Raspberry.",
   openGraph: {
-    title: "Our Menu | Twist - The Dessert Shop",
-    description: "Explore our delicious selection of handcrafted desserts at Twist - The Dessert Shop.",
+    title: "Our Menu | Zhadae's",
+    description: "Explore our artisanal cheesecake menu at Zhadae's in Logan, Australia.",
   },
 }
 

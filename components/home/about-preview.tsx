@@ -19,7 +19,7 @@ export function AboutPreview() {
             <div className="aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
                 src="/images/cafe-interior.jpg"
-                alt="Twist cafe interior"
+                alt="Zhadae's kitchen"
                 fill
                 className="object-cover"
               />
@@ -30,8 +30,8 @@ export function AboutPreview() {
               className="absolute -bottom-6 -right-6 w-32 h-32 lg:w-48 lg:h-48 bg-primary rounded-2xl hidden sm:flex items-center justify-center"
             >
               <div className="text-center text-primary-foreground">
-                <p className="text-3xl lg:text-4xl font-serif font-bold">5+</p>
-                <p className="text-xs lg:text-sm uppercase tracking-wider">Years of Excellence</p>
+                <p className="text-3xl lg:text-4xl font-serif font-bold">6</p>
+                <p className="text-xs lg:text-sm uppercase tracking-wider">Signature Flavors</p>
               </div>
             </motion.div>
           </motion.div>
@@ -44,13 +44,13 @@ export function AboutPreview() {
           >
             <p className="text-sm uppercase tracking-[0.2em] text-primary mb-3">Our Story</p>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-balance">
-              Where Every Dessert Tells a Story
+              Where Creaminess Meets Perfection
             </h2>
             <p className="text-accent-foreground/80 leading-relaxed mb-6">
-              At Twist, we believe that desserts are more than just sweet treats - they are moments of joy, celebrations of life, and expressions of love. Our journey began with a simple passion: to create extraordinary desserts that bring smiles to faces.
+              At Zhadae's, we believe that cheesecakes are more than just desserts - they are moments of pure indulgence, celebrations of flavor, and expressions of craftsmanship. Our journey began with a simple passion: to create the perfect creamy cheesecake.
             </p>
             <p className="text-accent-foreground/80 leading-relaxed mb-8">
-              Every creation that leaves our kitchen carries the essence of craftsmanship, using only the finest ingredients sourced from around the world. From our signature chocolate cake to our artisan gelato, each dessert is a masterpiece.
+              Every cheesecake that leaves our kitchen carries the essence of perfection, using only the finest ingredients sourced with care. From our signature lotus flavor to our fruity strawberry delights, each cheesecake is a masterpiece.
             </p>
             <Link
               href="/about"

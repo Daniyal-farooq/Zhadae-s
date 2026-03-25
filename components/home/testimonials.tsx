@@ -5,18 +5,18 @@ import { motion } from "framer-motion"
 
 const testimonials = [
   {
-    name: "Daniyal Farooq",
-    review: "The best desserts in Faisalabad! Their chocolate cake is absolutely divine.",
+    name: "Emily Chen",
+    review: "The lotus cheesecake is absolutely incredible! Perfect creamy texture and amazing flavor. Best cheesecake in Logan!",
     rating: 5,
   },
   {
-    name: "Ali Hassan",
-    review: "Amazing ambiance and even better desserts. A must-visit for anyone with a sweet tooth!",
+    name: "Jack Thompson",
+    review: "Finally found the perfect cheesecake shop! The banofee flavor is out of this world. Highly recommend!",
     rating: 5,
   },
   {
-    name: "Fatima Khan",
-    review: "Their macarons are perfection. Will definitely come back for more!",
+    name: "Sarah Williams",
+    review: "The white chocolate raspberry cheesecake is perfection. Will definitely order again!",
     rating: 5,
   },
 ]
@@ -53,7 +53,7 @@ export function Testimonials() {
         >
           <p className="text-sm uppercase tracking-[0.2em] text-primary mb-3">Testimonials</p>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-balance">
-            What Our Guests Say
+            What Our Customers Say
           </h2>
         </motion.div>
 

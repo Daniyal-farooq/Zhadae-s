@@ -1,69 +1,18 @@
 "use client"
 
-import { useState } from "react"
 import { motion } from "framer-motion"
-import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { MapPin, Send } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-import { Field, FieldGroup, FieldLabel } from "@/components/ui/field"
 
 const contactInfo = [
   {
     icon: MapPin,
-    title: "Visit Us",
-    details: ["Plot # 291, East, C487+P52", "Susan Road, Kohinoor City", "Madina Town, Faisalabad, Pakistan"],
-  },
-  {
-    icon: Phone,
-    title: "Call Us",
-    details: ["+92 327 4170000",],
-  },
-  {
-    icon: Mail,
-    title: "Email Us",
-    details: ["info@twistdesserts.pk", "orders@twistdesserts.pk"],
-  },
-  {
-    icon: Clock,
-    title: "Opening Hours",
-    details: ["Mon - Thu: 12:00 PM - 11:00 PM", "Fri - Sun: 12:00 PM - 12:00 AM"],
+    title: "Location",
+    details: ["Logan, Australia - Local orders only 📍"],
   },
 ]
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    setFormData({ name: "", email: "", phone: "", subject: "", message: "" })
-    
-    setTimeout(() => setIsSubmitted(false), 5000)
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
-  }
-
-  const whatsappNumber = "923274170000"
-  const whatsappMessage = encodeURIComponent("Hello! I would like to place an order from Twist - The Dessert Shop.")
-
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -72,7 +21,7 @@ export default function ContactPage() {
           <div className="absolute top-20 left-10 w-64 h-64 bg-primary rounded-full blur-3xl" />
           <div className="absolute bottom-10 right-20 w-96 h-96 bg-primary rounded-full blur-3xl" />
         </div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -85,8 +34,7 @@ export default function ContactPage() {
               Contact Us
             </h1>
             <p className="text-lg md:text-xl text-accent-foreground/80 leading-relaxed text-pretty">
-              Have a question, special order, or feedback? We would love to hear from you. 
-              Reach out and let us make your dessert dreams come true.
+              Ready to order your favorite cheesecake? Connect with us on social media or visit us in Logan.
             </p>
           </motion.div>
         </div>
@@ -95,7 +43,7 @@ export default function ContactPage() {
       {/* Contact Info Cards */}
       <section className="py-16 md:py-20 -mt-8">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {contactInfo.map((info, index) => (
               <motion.div
                 key={info.title}
@@ -118,198 +66,136 @@ export default function ContactPage() {
                 </Card>
               </motion.div>
             ))}
+
+            {/* Instagram Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <a
+                href="https://www.instagram.com/zkct.cheesecake.co"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block h-full"
+              >
+                <Card className="h-full bg-card border-border hover:shadow-lg transition-shadow duration-300">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+                      </svg>
+                    </div>
+                    <h3 className="font-serif text-lg font-semibold text-foreground mb-3">Instagram</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      @zkct.cheesecake.co
+                    </p>
+                  </CardContent>
+                </Card>
+              </a>
+            </motion.div>
+
+            {/* Threads Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <a
+                href="https://www.threads.com/@zkct.cheesecake.co"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block h-full"
+              >
+                <Card className="h-full bg-card border-border hover:shadow-lg transition-shadow duration-300">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-5.5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5.67 1.5 1.5 1.5 1.5-.67 1.5-1.5zm4 0c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5.67 1.5 1.5 1.5 1.5-.67 1.5-1.5z"/>
+                      </svg>
+                    </div>
+                    <h3 className="font-serif text-lg font-semibold text-foreground mb-3">Threads</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      @zkct.cheesecake.co
+                    </p>
+                  </CardContent>
+                </Card>
+              </a>
+            </motion.div>
+
+            {/* Order CTA Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              <a
+                href="https://www.instagram.com/zkct.cheesecake.co"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block h-full"
+              >
+                <Card className="h-full bg-primary text-primary-foreground hover:shadow-lg transition-shadow duration-300">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Send className="w-6 h-6" />
+                    </div>
+                    <h3 className="font-serif text-lg font-semibold mb-3">Order Now</h3>
+                    <p className="text-sm leading-relaxed opacity-90">
+                      Send us a DM on Instagram to place your order
+                    </p>
+                  </CardContent>
+                </Card>
+              </a>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Contact Form & Map Section */}
+      {/* Social Media CTA Section */}
       <section className="py-16 md:py-24 bg-secondary/30">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-            {/* Contact Form */}
+          <div className="max-w-3xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="text-primary text-sm uppercase tracking-[0.3em] font-medium">Send a Message</span>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mt-3 mb-8">
-                We Would Love to Hear From You
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Follow Our Journey
               </h2>
-
-              {isSubmitted ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="bg-green-50 border border-green-200 rounded-lg p-8 text-center"
+              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+                Stay updated with our latest flavors, behind-the-scenes moments, and special offers by following us on social media.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a
+                  href="https://www.instagram.com/zkct.cheesecake.co"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white px-8 py-4 rounded-full text-base font-medium hover:opacity-90 transition-all"
                 >
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Send className="w-8 h-8 text-green-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-green-800 mb-2">Message Sent!</h3>
-                  <p className="text-green-600">Thank you for reaching out. We will get back to you shortly.</p>
-                </motion.div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <FieldGroup>
-                    <div className="grid sm:grid-cols-2 gap-6">
-                      <Field>
-                        <FieldLabel htmlFor="name">Your Name</FieldLabel>
-                        <Input
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          placeholder="John Doe"
-                          required
-                          className="bg-background"
-                        />
-                      </Field>
-                      <Field>
-                        <FieldLabel htmlFor="email">Email Address</FieldLabel>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          placeholder="john@example.com"
-                          required
-                          className="bg-background"
-                        />
-                      </Field>
-                    </div>
-                    <div className="grid sm:grid-cols-2 gap-6">
-                      <Field>
-                        <FieldLabel htmlFor="phone">Phone Number</FieldLabel>
-                        <Input
-                          id="phone"
-                          name="phone"
-                          type="tel"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          placeholder="+92 327 4170000"
-                          className="bg-background"
-                        />
-                      </Field>
-                      <Field>
-                        <FieldLabel htmlFor="subject">Subject</FieldLabel>
-                        <Input
-                          id="subject"
-                          name="subject"
-                          value={formData.subject}
-                          onChange={handleChange}
-                          placeholder="Custom Order Inquiry"
-                          required
-                          className="bg-background"
-                        />
-                      </Field>
-                    </div>
-                    <Field>
-                      <FieldLabel htmlFor="message">Your Message</FieldLabel>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        placeholder="Tell us about your dessert requirements..."
-                        rows={5}
-                        required
-                        className="bg-background resize-none"
-                      />
-                    </Field>
-                  </FieldGroup>
-
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Button
-                      type="submit"
-                      size="lg"
-                      className="flex-1"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? (
-                        <span className="flex items-center gap-2">
-                          <span className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
-                          Sending...
-                        </span>
-                      ) : (
-                        <span className="flex items-center gap-2">
-                          <Send className="w-4 h-4" />
-                          Send Message
-                        </span>
-                      )}
-                    </Button>
-                    <Button
-                      type="button"
-                      size="lg"
-                      variant="outline"
-                      className="flex-1 border-green-500 text-green-600 hover:bg-green-50 hover:text-green-700"
-                      asChild
-                    >
-                      <a
-                        href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2"
-                      >
-                        <MessageCircle className="w-4 h-4" />
-                        Order via WhatsApp
-                      </a>
-                    </Button>
-                  </div>
-                </form>
-              )}
-            </motion.div>
-
-            {/* Google Map */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="flex flex-col"
-            >
-              <span className="text-primary text-sm uppercase tracking-[0.3em] font-medium">Find Us</span>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mt-3 mb-8">
-                Visit Our Shop
-              </h2>
-              
-              <div className="flex-1 min-h-[400px] rounded-xl overflow-hidden shadow-lg border border-border">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.5!2d73.0847!3d31.4504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x392269c81f0f0f0f%3A0x0!2sSusan%20Road%2C%20Kohinoor%20City%2C%20Madina%20Town%2C%20Faisalabad!5e0!3m2!1sen!2spk!4v1700000000000!5m2!1sen!2spk"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0, minHeight: "400px" }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Twist - The Dessert Shop Location"
-                  className="w-full h-full"
-                />
-              </div>
-
-              <div className="mt-6 p-4 bg-card rounded-lg border border-border">
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  <strong className="text-foreground">Address:</strong> Plot # 291, East, C487+P52, Susan Road, 
-                  Kohinoor City Madina Town, Faisalabad, Pakistan
-                </p>
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+                  </svg>
+                  Follow on Instagram
+                </a>
+                <a
+                  href="https://www.threads.com/@zkct.cheesecake.co"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full text-base font-medium hover:bg-gray-900 transition-all"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-5.5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5.67 1.5 1.5 1.5 1.5-.67 1.5-1.5zm4 0c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5.67 1.5 1.5 1.5 1.5-.67 1.5-1.5z"/>
+                  </svg>
+                  Follow on Threads
+                </a>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
-
-      {/* WhatsApp Floating Button */}
-      <a
-        href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
-        aria-label="Order via WhatsApp"
-      >
-        <MessageCircle className="w-6 h-6" />
-      </a>
     </div>
   )
 }
