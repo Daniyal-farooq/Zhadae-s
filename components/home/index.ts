@@ -1,0 +1,6 @@
+export { Hero } from './hero'
+export { Features } from './features'
+export { FeaturedDesserts } from './featured-desserts'
+export { AboutPreview } from './about-preview'
+export { Testimonials } from './testimonials'
+export { CTA } from './cta'
